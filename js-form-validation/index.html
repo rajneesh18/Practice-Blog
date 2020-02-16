@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script src="validation.js"></script>
+    <style> 
+        .error {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <form action="index.html" method="post" autocomplete="off" name="input_form" id="input_form" onsubmit="return ValidationEvent(this)">
+        <div>
+            <label for="username">Username : </label>
+            <input type="text" name="username" id="username" data-bind='{"required" : "yes","min" : 2,"max" : 5}'/>
+            <div name="username_message" id="username_message" class="error"></div>
+        </div>
+
+        <div>
+            <label for="name">Name : </label>
+            <input type="text" name="name" id="name" data-bind='{"type" : "phone"}'/>
+            <div name="name_message" id="name_message" class="error"></div>
+        </div>
+
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
